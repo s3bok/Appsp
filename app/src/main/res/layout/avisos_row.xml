@@ -37,6 +37,7 @@
         android:layout_height="1dp"
         android:background="@color/rosa" />
 
+
     <view
         class="android.view.View"
         android:layout_width="fill_parent"
