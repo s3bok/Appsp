@@ -2,12 +2,14 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="50dp"
-    android:background="@color/azul_oscuro">
+    android:background="@color/azul_oscuro"
+    android:orientation="vertical">
 
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_weight="1">
         
         <view
             android:layout_width="10dp"
@@ -35,14 +37,15 @@
         class="android.view.View"
         android:layout_width="fill_parent"
         android:layout_height="1dp"
-        android:background="@color/rosa" />
-
+        android:background="#000"
+        android:layout_weight="1" />
 
     <view
         class="android.view.View"
         android:layout_width="fill_parent"
         android:layout_height="1dp"
-        android:background="#333" />
+        android:background="#333"
+        android:layout_weight="1" />
 
 
 </LinearLayout>

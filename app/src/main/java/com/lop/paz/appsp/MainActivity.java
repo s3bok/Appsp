@@ -3,6 +3,7 @@ package com.lop.paz.appsp;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -58,17 +59,18 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        switch (item.getItemId()){
+            case R.id.action_nuevo:
+                //crea nuevo aviso
+                Log.d(getLocalClassName(), "Crear  nuevo aviso");
+                return true;
+            case R.id.action_salir:
+                finish();
+                return true;
+            default:
+                return false;
         }
 
-        return super.onOptionsItemSelected(item);
     }
 
     @SuppressWarnings("StatementWithEmptyBody")
