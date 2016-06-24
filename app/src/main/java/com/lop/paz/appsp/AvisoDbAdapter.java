@@ -25,7 +25,7 @@ public class AvisoDbAdapter {
 
 
     //se uasa para el logg
-    public static final String TAG ="AcisosDbAdapter";
+    public static final String TAG ="AvisosDbAdapter";
 
 
     private DataBaseHelper mDbHelper;
@@ -40,8 +40,8 @@ public class AvisoDbAdapter {
 
     //Declaracion SQL usada  para crea la base de datos
     private static  final  String DATABASE_CREATE =
-            "CREATE TABLE   inf not exists " + TABLE_NAME +"("+
-                    COL_ID +"INTEGER PRIMARY KEY  autoincrement, " +
+            "CREATE TABLE   if not exists " + TABLE_NAME +"("+
+                    COL_ID +" INTEGER PRIMARY KEY  autoincrement, " +
                     COL_CONTENT +" TEXT, "+
                     COL_IMPORTANT + " INTEGER );";
 
