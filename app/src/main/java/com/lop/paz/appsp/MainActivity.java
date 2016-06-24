@@ -1,5 +1,6 @@
 package com.lop.paz.appsp;
 
+import android.database.Cursor;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -20,24 +21,61 @@ public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     private ListView mListView;
+    private AvisoDbAdapter mDBAdapter;
+    private AvisoSimpleCursorAdapter mCursorAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mListView = (ListView) findViewById(R.id.avisos_list_view);
-        //El arrayAdapter es el controller en model-view-controller
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(
-                //Context
-                this,
-                //layout (view)
-                R.layout.avisos_row,
-                //campo qe muestra los datos
-                R.id.row_text,
-                // (model) modelo de datos para probar lista
-                new String[]{"Prueba Uno", "Prueba Dos", "prueba Tres"});
+       findViewById(R.id.avisos_list_view);
+        mListView.setDivider(null);
+        mDBAdapter = new AvisoDbAdapter(this);
+        mDBAdapter.open();
 
-        mListView.setAdapter(arrayAdapter);
+        if (savedInstanceState == null){
+            //limpiar todos lo datos
+            mDBAdapter.deleteReminder();
+
+            //Add algunos avisos
+            mDBAdapter.createReminder("Estudiar", true);
+            mDBAdapter.createReminder("Estudiar 1", false);
+            mDBAdapter.createReminder("Estudiar 2", false);
+            mDBAdapter.createReminder("Estudiar 3", true);
+        }
+
+        Cursor cursor  = mDBAdapter.fetchAllReminders();
+
+        //Desde las columnas definidas en la BD
+        String[] from = new String[]{
+                AvisoDbAdapter.COL_CONTENT
+        };
+
+        //al id de view  en el layout
+        int[] to  = new int[]{
+            R.id.row_text
+        };
+
+
+        mCursorAdapter = new AvisoSimpleCursorAdapter(
+                //Context
+                MainActivity.this,
+                //El layout de la fila
+                R.layout.avisos_row,
+                //Cursor
+                cursor,
+                //desde columnas definidas en la base de datos
+                from,
+                //A las id de views en  el layout
+                to,
+                //flag- no usado
+                0);
+
+        //El cursor adapter (controller) esta actualziando la listview (view)
+        //Con datos de la base de datos (model)
+        mListView.setAdapter(mCursorAdapter);
+
     }
 
     @Override
