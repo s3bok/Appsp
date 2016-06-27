@@ -16,7 +16,7 @@
             android:layout_height="match_parent"
             class="android.view.View"
             android:id="@+id/row_tab"
-            android:background="?android@color/rosa" />
+            android:background="?android:attr/activatedBackgroundIndicator" />
 
         <TextView
             android:layout_width="match_parent"
