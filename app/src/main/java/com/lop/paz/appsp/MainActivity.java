@@ -66,6 +66,7 @@ public class MainActivity extends AppCompatActivity
         //al id de view  en el layout
         int[] to  = new int[]{
             R.id.row_text
+
         };
 
 
