@@ -9,6 +9,7 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="?android:attr/activatedBackgroundIndicator"
         android:layout_weight="1">
 
         <view
@@ -16,7 +17,7 @@
             android:layout_height="match_parent"
             class="android.view.View"
             android:id="@+id/row_tab"
-            android:background="?android:attr/activatedBackgroundIndicator" />
+            android:background="@color/azul_claro" />
 
         <TextView
             android:layout_width="match_parent"
