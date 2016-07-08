@@ -2,7 +2,6 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="50dp"
-    android:background="@color/azul_oscuro"
     android:orientation="vertical">
 
     <LinearLayout
@@ -27,7 +26,7 @@
             android:textSize="18sp"
             android:gravity="center_vertical"
             android:padding="10dp"
-            android:background="@color/azul_oscuro"
+            style="@style/miEstilo"
             android:ellipsize="end"
             android:maxLines="1"/>
 

@@ -3,14 +3,12 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
-    <color name="azul_claro">#58A7B0</color>
-    <color name="azul_oscuro">#09097B</color>
-    <color name="rosa">#C800B5</color>
-    <color name="naranja">#FACC2E</color>
-    <color name="gris_claro">#bababa</color>
-    <color name="negro">#000000</color>
-    <color name="azul_neutro">#FF1118FF</color>
-    <color name="gris_obscuro">#181818</color>
-    <color name="blanco">#FFFFFF</color>
-    <color name="verde">#003300</color>
+    <color name="primary">#FFC107</color>
+    <color name="primary_dark">#FFA000</color>
+    <color name="primary_light">#FFECB3</color>
+    <color name="accent">#03A9F4</color>
+    <color name="text_primary">#212121</color>
+    <color name="text_secondary">#727272</color>
+    <color name="icons">#212121</color>
+    <color name="divider">#B6B6B6</color>
 </resources>
